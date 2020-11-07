@@ -22,9 +22,9 @@ function Form(props) {
 
   let isFormValid = Object.values(isValid).every(Boolean);
 
-  console.log(isFormValid)
-  console.log(isChecked)
-  console.log(isValid)
+  // console.log(isFormValid)
+  // console.log(isChecked)
+  // console.log(isValid)
 
   function handleInputChange(event) {
     const { name, value } = event.target;
@@ -147,7 +147,7 @@ function Form(props) {
             Согласен с <span className="form__radio-accent">офертой</span>
           </span>
         </label>
-        <button className={`form__button button" ${!isFormValid ? 'form__button_disabled' : ''}`} 
+        <button className={`form__button button" ${!isFormValid ? 'form__button_disabled' : ''}`}
         type="submit"
         >
         Отправить форму

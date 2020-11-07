@@ -9,9 +9,6 @@
   text-rendering: optimizeLegibility;
   background: url(../../images/top_background.jpg) no-repeat fixed center;
   background-size: cover;
-	/* scroll-snap-type: mandatory;
-  scroll-snap-points-y: repeat(800px);
-  scroll-snap-type: y mandatory; */
 }
 
 @media screen and (max-width: 1190px) {

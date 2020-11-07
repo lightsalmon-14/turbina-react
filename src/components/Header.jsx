@@ -12,10 +12,10 @@ function Header() {
           alt="Логотип" /></a>
         <button className="header__button button">Стриминги</button>
         <nav className="header__links">
-          <a className="header__link" target="_blank" href="#">Яндекс.Музыка</a>
-          <a className="header__link" target="_blank" href="#">Spotify</a>
-          <a className="header__link" target="_blank" href="#">Apple Music</a>
-          <a className="header__link" target="_blank" href="#">VK Music</a>
+          <a className="header__link" target="_blank" href="1">Яндекс.Музыка</a>
+          <a className="header__link" target="_blank" href="1">Spotify</a>
+          <a className="header__link" target="_blank" href="1">Apple Music</a>
+          <a className="header__link" target="_blank" href="1">VK Music</a>
         </nav>
       </div>
       <h1 className="header__title">

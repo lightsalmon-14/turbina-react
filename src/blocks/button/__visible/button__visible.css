@@ -5,6 +5,7 @@
 	display: block;
 	border: solid 2px white;
 }
+
 .button__visible {
   opacity: 1;
   transition: all 0.66s;
