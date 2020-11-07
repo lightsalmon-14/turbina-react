@@ -61,7 +61,7 @@ function Form(props) {
             required />
           <span id="text-input-error" className="form__item-error"></span>
         </label>
-        <label class="form__field">
+        <label className="form__field">
           <input
             type="radio"
             id="radio-input"
