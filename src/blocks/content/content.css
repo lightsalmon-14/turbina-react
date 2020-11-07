@@ -1,0 +1,26 @@
+.content {
+  background-color: white;
+  margin: 0 10px 0;
+  padding: 110px 51px 110px;
+  border-radius: 8px;
+	transform: translate(0px, -10px);
+}
+
+@media screen and (max-width: 1190px) {
+  .content {
+    padding: 100px 50px 100px;
+  }
+}
+
+/* @media screen and (max-width: 975px) {
+  .content {
+    transform: translate(0px, -8px);
+  }
+} */
+
+@media screen and (max-width: 475px) {
+  .content {
+    margin: 0 5px 0;
+    padding: 80px 20px 80px;
+  }
+}

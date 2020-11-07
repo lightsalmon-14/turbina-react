@@ -1,0 +1,15 @@
+.button__close_top {
+  background: url('../../../images/close_unfilled.svg') no-repeat;
+  margin-bottom: 8px;
+  padding: 0;
+	flex-shrink: 0;
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  width: 29px;
+  height: 29px;
+}
+
+.button__close_top:hover {
+  background: url('../../../images/close_unfilled.svg') no-repeat;
+}

@@ -1,0 +1,23 @@
+.song__title {
+  white-space: nowrap;
+	overflow: hidden;
+  text-overflow: ellipsis;
+	color: #fff;
+	font-size: 20px;
+  line-height: 2;
+  font-weight: 400;
+	width: 100%;
+	display: flex;
+}
+
+@media screen and (max-width: 1279px) {
+  .song__title {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+	.song__title {
+		font-size: 14px;
+	}
+}

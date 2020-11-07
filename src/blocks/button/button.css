@@ -1,0 +1,17 @@
+@import url(../button/__play/button__play.css);
+@import url(../button/__close/button__close.css);
+@import url(../button/__toggle/button__toggle.css);
+@import url(../button/__text/button__text.css);
+@import url(../button/_top/button__close_top.css);
+@import url(../button/_player/button__close_player.css);
+@import url(../button/__visible/button__visible.css);
+@import url(../button/_text/button__visible_text.css);
+
+
+.button {
+  outline: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  text-decoration: none;
+	transition: all 0.66s;
+}

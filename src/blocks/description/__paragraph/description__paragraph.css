@@ -1,0 +1,32 @@
+.description__paragraph {
+  line-height: 1.375;
+  max-width: 760px;
+  margin: 0;
+  margin-bottom: 27px;
+}
+
+/* .description__paragraph:nth-child(2) {
+  margin-bottom: 27px;
+} */
+
+@media screen and (max-width: 1190px) {
+  .description__paragraph {
+    line-height: 1.47;
+    max-width: 680px;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .description__paragraph {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .description__paragraph {
+    line-height: 1.33;
+  }
+  /* .description__paragraph:nth-child(2) {
+    margin-bottom: 20px;
+  } */
+}

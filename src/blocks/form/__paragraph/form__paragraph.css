@@ -1,0 +1,24 @@
+.form__paragraph {
+  margin: 0 0 60px;
+  max-width: 760px;
+}
+
+@media screen and (max-width: 1190px) {
+  .form__paragraph {
+    line-height: 1.47;
+    max-width: 680px;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .form__paragraph {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .form__paragraph {
+    margin: 0 0 40px;
+    line-height: 1.33;
+  }
+}

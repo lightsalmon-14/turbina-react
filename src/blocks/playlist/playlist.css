@@ -1,0 +1,47 @@
+@import url(./_song/playlist_song.css);
+
+.playlist {
+  margin-bottom: 10px;
+  margin-right: 50px;
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.66s;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-face-color: #000;
+  scroll-behavior: smooth;
+}
+
+.playlist::-webkit-scrollbar-button {
+  background-repeat: no-repeat;
+  width:5px;
+  height:10px
+}
+
+.playlist::-webkit-scrollbar-track {
+  background-color: rgba(243,243,243,0.2);
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+
+.playlist::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background-color: rgba(255,255,255,0.3);
+}
+
+.playlist::-webkit-scrollbar-thumb:hover{
+  background-color: rgba(255,255,255,0.6);
+}
+
+.playlist::-webkit-resizer{
+  background-repeat:no-repeat;
+  width:5px;
+  height:0px
+}
+
+.playlist::-webkit-scrollbar{
+  width: 5px;
+}

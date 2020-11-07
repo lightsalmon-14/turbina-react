@@ -1,0 +1,8 @@
+.description__item {
+  margin-bottom: 14px;
+  list-style-type: none;
+}
+
+.description__item:last-child {
+  margin-bottom: 0;
+}

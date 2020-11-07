@@ -1,0 +1,9 @@
+.header__image {
+  width: 56%;
+}
+
+@media screen and (max-width: 768px) {
+  .header__image {
+    width: 84%;
+  }
+}

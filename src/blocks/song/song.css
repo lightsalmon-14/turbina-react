@@ -1,0 +1,18 @@
+@import url(./__progress/song__progress.css);
+@import url(./__time/song__time.css);
+@import url(./__title/song__title.css);
+@import url(./__subtitle/song__subtitle.css);
+
+.song {
+  color: white;
+	margin-right: auto;
+	width: 100%;
+  height: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+	margin: 0 25px 16px 20px;
+	overflow: hidden;
+  white-space: nowrap;
+  overflow: ellipsis;
+}

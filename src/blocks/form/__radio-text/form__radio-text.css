@@ -1,0 +1,5 @@
+@media screen and (max-width: 475px) {
+  .form__radio-text {
+    line-height: 1.83;
+  }
+}
