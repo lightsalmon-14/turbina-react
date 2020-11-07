@@ -4,19 +4,20 @@ import { initialContent as content } from '../utils/content';
 function Description() {
   return (
     <section className="description">
-      <h2 className="description__title">{content[0].title}</h2>
-      <p className="description__paragraph">{content[0].text[0]}</p>
-      <p className="description__paragraph">{content[0].text[1]}</p>
-      <h2 className="description__title">{content[1].title}</h2>
-      <p className="description__paragraph">{content[1].text[0]}</p>
-      <h2 className="description__title">{content[2].title}</h2>
-      <ul className="description__list">
-        {content[2].text.map((t, i) => {
-          return (
-            <li className="description__item" key={i}>&bull; {t}</li>
-          )
-        })}
-      </ul>
+			{ content.map((paragraph, key) => {
+				return paragraph &&
+				<>
+					<h2 className="description__title" key={key}>{paragraph.title ? paragraph.title : ''}</h2>
+					<p className="description__paragraph">{paragraph.text ? paragraph.text : ''}</p>
+					<ul className="description__list">
+								{paragraph.list ? paragraph.list.map((item, key) => {
+									return <li className="description__item" key={key}>&bull;&nbsp;{paragraph.list[key]}</li>
+								}) : ''}
+					</ul>
+				</>
+			})
+
+			}
     </section>
   )
 }
