@@ -1,0 +1,33 @@
+.form__button {
+  width: 100%;
+  min-height: 60px;
+  line-height: 1.25;
+  border: 2px solid black;
+  border-radius: 30px;
+  padding: 18px 25px 18px;
+  background-color: transparent;
+}
+
+.form__button:hover {
+	transform: none;
+}
+
+.form__button-error {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+  line-height: 1.25;
+}
+
+@media screen and (max-width: 475px) {
+  .form__button {
+    padding: 9px 18px 9px;
+    line-height: 1.67;
+    min-height: 42px;
+  }
+
+  .form__button-error {
+    margin-top: 10px;
+    line-height: 1.43;
+  }
+}

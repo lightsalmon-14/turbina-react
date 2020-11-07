@@ -1,0 +1,17 @@
+.form__input_radio {
+  width: 28px;
+  height: 28px;
+  margin-right: 14px;
+  padding: 0;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+
+.form__input_radio:checked {
+  background-color: black;
+}
+

@@ -1,0 +1,24 @@
+.header__button {
+  line-height: 1.25;
+  padding: 5px 14px 5px;
+  margin-bottom: 8px;
+  border-radius: 30px;
+	flex-shrink: 0;
+	width: auto;
+  color: white;
+  border: 2px solid white;
+  visibility: hidden;
+  position: absolute;
+  background: transparent;
+  top: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 475px) {
+  .header__button {
+    margin: 13px 13px 0;
+    visibility: visible;
+  }
+}
+
+

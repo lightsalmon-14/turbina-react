@@ -1,0 +1,17 @@
+@import url(../header/__menu/header__menu.css);
+@import url(../header/__web/header__web.css);
+@import url(../header/__logo/header__logo.css);
+@import url(../header/__links/header__links.css);
+@import url(../header/__link/header__link.css);
+@import url(../header/__title/header__title.css);
+@import url(../header/__image/header__image.css);
+@import url(../header/__button/header__button.css);
+
+.header {
+	height: 100vh;
+	width: 100%;
+	max-height: 780px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}

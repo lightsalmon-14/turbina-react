@@ -1,0 +1,7 @@
+.button__close_player {
+  background: url('../../../images/close_filled.svg') no-repeat 0 9px;
+}
+
+.button__close_player:hover {
+  background: url('../../../images/close_filled.svg') no-repeat 0 9px;
+}

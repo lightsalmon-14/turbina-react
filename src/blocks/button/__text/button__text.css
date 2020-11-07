@@ -1,0 +1,24 @@
+.button__text {
+  line-height: 1.2;
+  border-radius: 30px;
+  flex-shrink: 0;
+  opacity: 0;
+  color: white;
+  transition: opacity 0.66s;
+  background: transparent;
+  margin: 0px 30px 20px 0px;
+  display: none;
+  width: fit-content;
+  padding: 6px 18px 6px;
+}
+
+.button__text:hover {
+	font-style: italic;
+}
+
+@media screen and (max-width: 475px) {
+	.button__text {
+		width: calc(100% - 30px);
+		margin: 5px auto;
+	}
+}

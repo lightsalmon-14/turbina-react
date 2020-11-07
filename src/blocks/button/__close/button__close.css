@@ -1,0 +1,10 @@
+.button__close {
+	width: 27px;
+	height: 40px;
+	transition: all 0.66s;
+	flex-shrink: 0;
+	transform: rotate(90deg);
+	border: none;
+	right: 15px;
+	position: absolute;
+}

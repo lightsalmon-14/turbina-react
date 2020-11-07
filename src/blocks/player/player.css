@@ -1,0 +1,14 @@
+.player {
+  margin-top: auto;
+  height: auto;
+  padding: 0px 25px;
+  display: flex;
+	position: relative;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 475px) {
+	.player {
+		flex-wrap: wrap;
+	}
+}

@@ -1,0 +1,9 @@
+.header__title {
+  text-align: center;
+  width: 100%;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
