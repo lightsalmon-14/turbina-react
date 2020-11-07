@@ -11,7 +11,7 @@ function Description() {
 					<p className="description__paragraph">{paragraph.text ? paragraph.text : ''}</p>
 					<ul className="description__list">
 								{paragraph.list ? paragraph.list.map((item, key) => {
-									return <li className="description__item" key={key}>&bull;&nbsp;{paragraph.list[key]}</li>
+									return <li className="description__item" key={key}>{paragraph.list[key]}</li>
 								}) : ''}
 					</ul>
 				</>
