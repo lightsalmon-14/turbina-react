@@ -12,6 +12,16 @@
 	transform: none;
 }
 
+.form__button_disabled {
+    opacity: 0.4;
+    border: 2px solid rgb(59, 59, 59);
+    color: rgb(59, 59, 59);
+}
+
+.form__button_disabled:hover {
+  cursor: auto;
+}
+
 .form__button-error {
   color: red;
   text-align: center;

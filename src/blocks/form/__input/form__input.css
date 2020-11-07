@@ -18,12 +18,12 @@
   border-bottom:  2px solid red;
   color: red;
   margin-bottom: 6px;
-}
+} */
 
 .form__item-error {
   color: red;
   line-height: 1.25;
-} */
+}
 
 @media screen and (max-width: 1190px) {
   .form__input {
