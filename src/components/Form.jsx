@@ -16,7 +16,7 @@ const formSchema = Yup.object().shape({
     .email("Invalid email format")
     .required("Required!"),
   phone: Yup.string()
-    // .matches(phoneRegExp, 'Phone number is not valid')
+    // .matches(phoneRegExp, 'Phone number is not valid') ///
     .required("Required!"),
   text: Yup.string()
     .min(10, "Mininum 10 characters")
