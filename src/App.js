@@ -1,6 +1,7 @@
 import Description from './components/Description';
 import Footer from './components/Footer';
-import Form from './components/Form';
+import SubmitForm from './components/SubmitForm';
+
 import Header from './components/Header';
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
       <Header />
       <main className="content">
         <Description />
-        <Form />
+        <SubmitForm />
       </main>
       <Footer />
     </>

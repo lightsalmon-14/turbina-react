@@ -14,11 +14,11 @@
   color: rgba(0, 0, 0, 0.4);
 }
 
-/* .form__input_error {
+.form__input_error {
   border-bottom:  2px solid red;
   color: red;
   margin-bottom: 6px;
-} */
+}
 
 .form__item-error {
   color: red;
