@@ -11,13 +11,8 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.0",
-<<<<<<< HEAD
     "web-vitals": "^0.2.4",
     "yup": "^0.29.3"
-=======
-    "shortid": "^2.2.16",
-    "web-vitals": "^0.2.4"
->>>>>>> dev-player
   },
   "scripts": {
     "start": "react-scripts start",
