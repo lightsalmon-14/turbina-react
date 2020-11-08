@@ -6,10 +6,12 @@
   border-radius: 30px;
   padding: 18px 25px 18px;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .form__button:hover {
-	transform: none;
+  transform: none;
+  font-style: italic;
 }
 
 .form__button_disabled {

@@ -1,160 +1,137 @@
 import React from 'react';
-
-function Form(props) {
-
-  const [inputValue, setInputValue] = React.useState({
-    name: '',
-    email: '',
-    // phone: '',
-    text: '',
-  });
+import { Formik } from 'formik';
+import * as Yup from 'yup';
 
 
-  const [isValid, setIsValid] = React.useState({ name: false, email: false,  text: false, agreement: false }); // add phone
-  const [validationMessage, setValidationMessage] = React.useState({ name: '', email: '',  text: '' }); // add phone
-  const [isChecked, setIsChecked] = React.useState(false);
+////// add styles to btn when form isnt valid 
+////// red error lines
+// const phoneRegExp = /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/;
 
-  // function handleCheckBox() {
-  //   setIsChecked(!isChecked)
-  // }
+const formSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(3, "Mininum 3 characters")
+    .max(15, "Maximum 15 characters")
+    .required("Required!"),
+  email: Yup.string()
+    .email("Invalid email format")
+    .required("Required!"),
+  phone: Yup.string()
+    // .matches(phoneRegExp, 'Phone number is not valid')
+    .required("Required!"),
+  text: Yup.string()
+    .min(10, "Mininum 10 characters")
+    .max(300, "Maximum 300 characters")
+    .required("Required!"),
+  agreement: Yup.bool()
+    .oneOf([true], 'Accept Terms & Conditions is required')
+})
 
-
-
-  let isFormValid = Object.values(isValid).every(Boolean);
-
-  // console.log(isFormValid)
-  // console.log(isChecked)
-  // console.log(isValid)
-
-  function handleInputChange(event) {
-    const { name, value } = event.target;
-    setInputValue({
-      ...inputValue,
-      [name]: value,
-    })
-    setIsChecked(!isChecked)
-    setIsValid({
-      ...isValid,
-      [name]: event.target.validity.valid,
-    })
-    setValidationMessage({
-      ...validationMessage,
-      [name]: event.target.validationMessage,
-    })
-  }
-
-  // React.useEffect(() => {
-  //   setInputValue({
-  //     name: '',
-  //     email: '',
-  //     phone: '',
-  //     text: ''
-  //   });
-  //   // setValidationMessage({ name: '', email: '', phone: '', text: '' });
-  //   // setIsValid({ name: false, email: false, phone: false, text: false });//
-  // }, []);
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    setInputValue({
-      name: '',
-      email: '',
-      // phone: '',
-      text: '',
-    })
-  }
-
+function Form() {
   return (
     <section className="form">
       <h3 className="form__title">форма</h3>
       <p className="form__paragraph">
-        Заполняя эту форму, вы становитесь частью проекта.
-      </p>
-      <form className="form__fields"
-        name="text-form"
-        action="#"
-        method="POST"
-        noValidate
-        onSubmit={handleSubmit}
+        Заполняя эту форму, вы становитесь частью проекта.</p>
+      <Formik
+        initialValues={{
+          name: '',
+          email: '',
+          phone: '',
+          text: '',
+          agreement: false
+        }}
+        validationSchema={formSchema}
+        onSubmit={(values, { resetForm }) => {
+          alert(JSON.stringify(values));
+          resetForm(values);
+        }}
       >
-        <label className="form__field">
-          <input
-            type="text"
-            id="name-input"
-            className="form__input form__input_error"
-            name="name"
-            value={inputValue.name}
-            placeholder="Имя и фамилия автора"
-            minLength="3" maxLength="50"
-            required
-            onChange={handleInputChange}
-          />
-          <span id="name-input-error" className={!isValid.name ? 'form__item-error' : ""}>{validationMessage.name}</span>
-        </label>
-        <label className="form__field">
-          <input
-            type="email"
-            id="email-input"
-            className="form__input form__input_error"
-            name="email"
-            value={inputValue.email}
-            placeholder="Почта"
-            required
-            onChange={handleInputChange}
-          />
-          <span id="email-input-error" className={!isValid.email ? 'form__item-error' : ""}>{validationMessage.email}</span>
-        </label>
-        {/* <label className="form__field">
-          <input
-            type="tel"
-            id="phone-input"
-            className="form__input"
-            name="phone"
-            value={inputValue.phone}
-            pattern=""
-            placeholder="Телефон"
-            required
-            onChange={handleInputChange}
-          />
-          <span id="phone-input-error" className={!isValid.phone ? 'form__item-error' : ""}>{validationMessage.phone}</span>
-        </label> */}
-        <label className="form__field">
-          <input
-            type="text"
-            id="text-input"
-            className="form__input"
-            name="text"
-            value={inputValue.text}
-            placeholder="Стихи"
-            minLength="5"
-            maxLength="500"
-            required
-            onChange={handleInputChange}
-          />
-          <span id="text-input-error" className={!isValid.text ? 'form__item-error' : ""}>{validationMessage.text}</span>
-        </label>
-        <label className="form__field">
-          <input
-            type="checkbox"
-            id="radio-input"
-            className="form__input form__input_radio"
-            name="agreement"
-            required
-            onChange={handleInputChange}
-          />
-          <span id="radio-input-error" className="form__item-error"></span>
-          <span className="form__radio-text">
-            Согласен с <span className="form__radio-accent">офертой</span>
-          </span>
-        </label>
-        <button className={`form__button button" ${!isFormValid ? 'form__button_disabled' : ''}`}
-        type="submit"
-        >
-        Отправить форму
-        </button>
-        <span className="form__button-error"></span>
-      </form>
-    </section>
+        {({
+          handleSubmit,
+          handleChange,
+          handleBlur,
+          values,
+          errors,
+          touched,
+          isValid,
+          dirty
+        }) => {
+          console.log(values)
+          return (
+            <form className="form__fields" onSubmit={handleSubmit} noValidate>
+              <label className="form__field">
+                <input
+                  type="text"
+                  className="form__input form__input_error"
+                  name={"name"}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.name}
+                  placeholder="Имя и фамилия автора"
+                />
+                {errors.name && touched.name && <span className="form__item-error">{errors.name}</span>}
+              </label>
+              <label className="form__field">
+                <input
+                  type="email"
+                  className="form__input form__input_error"
+                  name={"email"}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.email}
+                  placeholder="Почта"
+                />
+                {errors.email && touched.email && <span className="form__item-error">{errors.email}</span>}
+              </label>
+              <label className="form__field">
+                <input
+                  type="tel"
+                  className="form__input form__input_error"
+                  name={"phone"}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.phone}
+                  placeholder="Телефон"
+                />
+                {errors.phone && touched.phone && <span className="form__item-error">{errors.phone}</span>}
+              </label>
+              <label className="form__field">
+                <input
+                  type="text"
+                  className="form__input form__input_error"
+                  name={"text"}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.text}
+                  placeholder="Стихи"
+                />
+                {errors.text && touched.text && <span className="form__item-error">{errors.text}</span>}
+              </label>
+              <label className="form__field">
+                <input
+                  type="checkbox"
+                  className="form__input form__input_radio"
+                  name={"agreement"}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  checked={values.agreement}
+                />
+                <span className="form__radio-text">
+                  Согласен с <a className="form__radio-accent" href="#">офертой</a>
+                </span>
+                {errors.agreement && touched.agreement && <span className="form__item-error">{errors.agreement}</span>}
+              </label>
+              <button className="form__button button"
+                type={"submit"}
+                // disabled={!(isValid && dirty)}
+              >
+                Отправить форму
+              </button>
+            </form>
+          )
+        }}
+      </Formik>
+    </section >
   )
 }
 export default Form;
