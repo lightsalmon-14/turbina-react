@@ -1,35 +1,29 @@
 import React from 'react';
 import { initialContent as content } from '../utils/content';
+import Title from './Title';
+import Paragraph from './Paragraph';
+import List from './List';
 
-function Description() {
-  return (
-    <section className="description">
-			{ content.map((paragraph, number) => {
-					return paragraph &&
-					<>
-						<h2 className="description__title" key={ number.toString() }>
-							{ paragraph.title ? paragraph.title : null }
-						</h2>
+function Description(props) {
+	return (
+		<section className="description" key={props.numbers}>
+			{ content.map((paragraph) =>
+				<>
+					<Title title={ paragraph.title } />
 
-						{ paragraph.text && paragraph.text.map((item, number) => {
-								return <p className="description__paragraph" key={ number.toString() }>{ item }</p>
-							})
-						}
+					{
+						paragraph.text &&
+						<Paragraph text={ paragraph.text } />
+					}
 
-						{ paragraph.list &&
-							<ul className="description__list">
-								{ paragraph.list.map((item, number) => {
-									return <li className="description__item" key={ number.toString() }>{ item }</li>
-									}
-								)}
-							</ul>
-						}
-					</>
-				})
-			}
-    </section>
-  )
+					{
+						paragraph.list &&
+						<List list={ paragraph.list }/>
+					}
+				</>
+			)}
+		</section>
+	)
 }
-
 
 export default Description;
