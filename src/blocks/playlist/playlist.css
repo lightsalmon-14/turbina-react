@@ -1,4 +1,5 @@
 @import url(./_song/playlist_song.css);
+@import url(./__text/playlist__text.css);
 
 .playlist {
   margin-bottom: 10px;

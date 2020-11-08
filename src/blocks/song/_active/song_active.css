@@ -1,0 +1,19 @@
+.song_active {
+	font-style: italic;
+	cursor: pointer;
+	background: rgba(255,255,255,0.15);
+	transition: 0.99s;
+	backdrop-filter: blur(3px);
+	border-radius: 10px;
+	position: relative;
+}
+
+.song_active:after {
+	position: absolute;
+	content: '';
+	background: url(/src/images/play_small.svg) no-repeat;
+	width: 20px;
+	height: 20px;
+	right: 12px;
+	top: 9px;
+}

@@ -2,7 +2,6 @@ import React from 'react';
 import title from '../images/turbina_logo.svg';
 import logo from '../images/logo.svg';
 import Player from './Player';
-import PlayList from './PlayList';
 
 function Header() {
   return (
@@ -22,7 +21,6 @@ function Header() {
         <img className="header__image" src={title} alt="Турбина" />
       </h1>
       <Player />
-      <PlayList />
     </header>
   )
 }

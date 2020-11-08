@@ -1,11 +1,14 @@
 import React from 'react';
 
 function Song(props) {
-	const { artist, song } = props.currentSong
-  return (
+	return (
 			<div className="song current">
         <div className="song__progress"></div>
-        <div className="song__title animated">{`${ artist } - ${ song }`}
+        <div className="song__title animated">
+					{ props.currentSong ?
+					`${ props.currentSong.artist } - ${ props.currentSong.title }` :
+					'Песен не добавлено'
+					}
           <div className="song__time">0:24</div>
         </div>
       </div>
