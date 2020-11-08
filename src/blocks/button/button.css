@@ -11,7 +11,7 @@
 
 .button {
   outline: none;
-  /* cursor: pointer; */
+  cursor: pointer;
   box-sizing: border-box;
   text-decoration: none;
 	transition: all 0.66s;
