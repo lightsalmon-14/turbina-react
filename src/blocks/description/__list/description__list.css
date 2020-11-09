@@ -1,4 +1,18 @@
 .description__list {
-  margin: 0 0 0 -5px;
+  margin: 0 0 0 -10px;
   padding: 0;
+  max-width: 760px;
+}
+
+@media screen and (max-width: 1190px) {
+  .description__list {
+    line-height: 1.47;
+    max-width: 680px;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .description__list {
+    width: calc(100% + 10px);
+  }
 }

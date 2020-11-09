@@ -25,21 +25,21 @@ function SubmitForm() {
 
         validationSchema={Yup.object({
           name: Yup.string()
-            .min(3, "Mininum 3 characters")
-            .max(15, "Maximum 15 characters")
-            .required("Required!"),
+            .min(3)
+            .max(15)
+            .required(),
           email: Yup.string()
-            .email("Invalid email format")
-            .required("Required!"),
+            .email()
+            .required(),
           phone: Yup.string()
-            .matches(phoneRegExp, 'Phone number is not valid')
-            .required("Required!"),
+            .matches(phoneRegExp)
+            .required(),
           text: Yup.string()
-            .min(10, "Mininum 10 characters")
-            .max(300, "Maximum 300 characters")
-            .required("Required!"),
+            .min(10)
+            .max(300)
+            .required(),
           terms: Yup.bool()
-            .oneOf([true], 'Accept Terms & Conditions is required')
+            .oneOf([true])
           })}
 
         onSubmit={(values, { setSubmitting, resetForm }) => {
