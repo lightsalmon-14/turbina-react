@@ -11,11 +11,11 @@
   background-size: cover;
 }
 
-* {
+/* * {
   outline-style: solid;
   outline-width: 1px;
   outline-color: red;
-}
+} */
 
 @media screen and (max-width: 1190px) {
   .root {

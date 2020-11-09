@@ -3,6 +3,7 @@
 	cursor: pointer;
 	background: rgba(255,255,255,0.075);
 	transition: 0.99s;
+	transition-property: background;
 	backdrop-filter: blur(8px);
 	border-radius: 10px;
 }

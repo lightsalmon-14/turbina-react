@@ -6,7 +6,7 @@ import CheckBox from './CheckBox';
 
 
 function SubmitForm() {
-  
+
   const phoneRegExp = /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/;
 
   return (
@@ -69,7 +69,7 @@ function SubmitForm() {
             type="text"
             placeholder="Стихи"
           />
-          <CheckBox 
+          <CheckBox
             name="terms"
           />
           <button className="form__button button"
