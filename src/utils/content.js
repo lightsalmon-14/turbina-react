@@ -21,4 +21,27 @@ export const initialContent = [
       'Дети получают невероятное удовольствие и мотивацию от того, что их творчество востребовано сверстниками и взрослыми.'
     ]
   }
+];
+
+export const streamings = [
+  {
+    id: 0,
+    name: 'Яндекс.Музыка',
+    href: "1"
+  },
+  {
+    id: 1,
+    name: 'Spotify',
+    link: "1"
+  },
+  {
+    id: 2,
+    name: 'Apple Music',
+    link: "1"
+  },
+  {
+    id: 3,
+    name: 'VK Music',
+    link: "1"
+  }
 ]

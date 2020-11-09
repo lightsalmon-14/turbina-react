@@ -7,9 +7,9 @@ const CheckBox = ({ ...props }) => {
   return (
     <>
       <label className="form__field">
-        <input className="form__input form__input_radio" {...field} {...props} type="checkbox" />
-        <span className="form__radio-text">
-          Согласен с <a className="form__radio-accent" href="#">офертой</a>
+        <input className="form__input form__input_checkbox" {...field} {...props} type="checkbox" />
+        <span className="form__checkbox-text">
+          Согласен с <a className="form__checkbox-accent" target="_blank" href="1">офертой</a>
         </span>
       </label>
       {meta.touched && meta.error && <span className="form__item-error">{meta.error}</span>}

@@ -4,7 +4,7 @@ const List = ({ list }) => {
   return (
 				<ul className="description__list">
 					{ list.map((item, key) => {
-							return <li className="description__item" key={key}>{ item }</li>
+							return <p className="description__item" key={key}>{ item }</p>
 					}
 				)}
 		</ul>
