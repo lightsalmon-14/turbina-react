@@ -1,7 +1,7 @@
 .description__item {
   margin-bottom: 14px;
-  list-style-type: disc;
-	margin-left: 30px;
+  list-style: disc inside;
+  display: list-item;
 }
 
 .description__item:last-child {
