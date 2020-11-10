@@ -1,5 +1,5 @@
 .content {
-  background-color: white;
+  background-color: #fff;
   margin: 0 10px 0;
   padding: 110px 51px 110px;
   border-radius: 8px;
@@ -12,11 +12,11 @@
   }
 }
 
-/* @media screen and (max-width: 975px) {
+@media screen and (max-width: 975px) {
   .content {
     transform: translate(0px, -8px);
   }
-} */
+}
 
 @media screen and (max-width: 475px) {
   .content {

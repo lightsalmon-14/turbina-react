@@ -1,9 +1,10 @@
 .button__text {
+  font-family: 'Inter', Arial, sans-serif;
   line-height: 1.2;
   border-radius: 30px;
   flex-shrink: 0;
   opacity: 0;
-  color: white;
+  color: #fff;
   transition: opacity 0.66s;
   background: transparent;
   margin: 0px 30px 20px 0px;

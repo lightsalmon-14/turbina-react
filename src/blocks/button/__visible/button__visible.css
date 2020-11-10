@@ -3,7 +3,7 @@
   transition: all 0.66s;
 	visibility: visible;
 	display: block;
-	border: solid 2px white;
+	border: solid 2px #fff;
 }
 
 .button__visible {

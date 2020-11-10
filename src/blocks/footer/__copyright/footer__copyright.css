@@ -1,6 +1,7 @@
 .footer__copyright {
   margin: 0;
-  color: white;
+  color: #fff;
+  font-family: 'Inter', Arial, sans-serif;
   line-height: 1.375;
 }
 
