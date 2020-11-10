@@ -117,7 +117,6 @@ const Player = () => {
 					onChange={ dragHandler }
 				/>
       </div>
-
       <button
 				className="button button__text"
 				ref={ songTextButtonRef }
@@ -158,8 +157,8 @@ const Player = () => {
 							currentSong.text.map(paragraph => <p className="playlist__text">{ paragraph }</p>)
 						}
 					</ul>
-			 : <p className="playlist__text">Больше релизов не найдено</p>
-			 }
+				: <p className="playlist__text">Больше релизов не найдено</p>
+			}
 		</section>
 	</>
   )

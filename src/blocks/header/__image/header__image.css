@@ -1,9 +1,30 @@
 .header__image {
-  width: 56%;
+  max-width: 720px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1190px) {
   .header__image {
-    width: 84%;
+    width: 600px;
+    height: 186px;
+  }
+}
+
+@media screen and (max-width: 975px) {
+  .header__image {
+    width: 620px;
+    height: 192px;
+  }
+}
+
+@media screen and (max-width: 635px) {
+  .header__image {
+    width: 470px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .header__image {
+    max-width: 270px;
+    height: 82px;
   }
 }

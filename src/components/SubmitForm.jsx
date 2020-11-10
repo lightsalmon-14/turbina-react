@@ -7,7 +7,8 @@ import CheckBox from './CheckBox';
 function SubmitForm() {
 
   const phoneRegExp = /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/;
-  const [isState, setIsState] = React.useState('');
+  const [isSubmitingError, setIsSubmitingError] = React.useState('');
+  const [isSubmitingButton, setIsSubmitingButton] = React.useState('Отправить форму');
 
   return (
     <section className="form">
@@ -25,21 +26,21 @@ function SubmitForm() {
 
         validationSchema={Yup.object({
           name: Yup.string()
-            .min(3)
-            .max(15)
-            .required(),
+            .min(3, "Имя должно быть не короче 3 символов*")
+            .max(60, "Имя не должно быть длиннее 50 символов*")
+            .required("Обязательное поле*"),
           email: Yup.string()
-            .email()
-            .required(),
+            .email("Не действительный адрес электронной почты*")
+            .required("Обязательное поле*"),
           phone: Yup.string()
-            .matches(phoneRegExp)
-            .required(),
+            .matches(phoneRegExp, "Номер телефона недействителен*")
+            .required("Обязательное поле*"),
           text: Yup.string()
-            .min(10)
-            .max(300)
-            .required(),
+            .min(10, "Стих должен быть не короче 10 символов*")
+            .max(500, "Стих не должен быть длиннее 500 символов*")
+            .required("Обязательное поле*"),
           terms: Yup.bool()
-            .oneOf([true])
+            .oneOf([true], "Требуется принять условия*")
         })}
 
         onSubmit={(values, { setSubmitting, resetForm }) => {
@@ -60,20 +61,20 @@ function SubmitForm() {
               setTimeout(() => {
                 setSubmitting(false);
                 console.log((JSON.stringify(values, null, 2)));
-                setIsState('');
+                setIsSubmitingError('');
+                setIsSubmitingButton('Ура, форма отправлена!')
                 resetForm('');
               }, 1500)
             })
             .catch((err) => {
               console.log(err);
-              setIsState('Упс, что-то пошло не так и форма не отправилась, попробуйте ещё раз!')
+              setIsSubmitingError('Упс, что-то пошло не так и форма не отправилась, попробуйте ещё раз!');
             })
         }}
-
       >
         {formik => (
           <Form className="form__fields"
-                noValidate >
+            noValidate >
             <FormInput
               name="name"
               type="text"
@@ -82,7 +83,7 @@ function SubmitForm() {
             <FormInput
               name="phone"
               type="tel"
-              placeholder="Телефон"
+              placeholder="Телефон  +7 XXX XXX XX XX"
             />
             <FormInput
               name="email"
@@ -100,10 +101,9 @@ function SubmitForm() {
             <button className="form__button button"
               type="submit"
             >
-              Отправить форму
-            {formik.isSubmitting}
+              {formik.isSubmitting ? 'Форма отправляеться...' : `${isSubmitingButton}`}
             </button>
-            <span className="form__button-error">{isState}</span>
+            <span className="form__button-error">{isSubmitingError}</span>
           </Form>
         )}
       </Formik>
