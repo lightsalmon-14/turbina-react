@@ -1,4 +1,5 @@
 .playlist_song:hover {
+	font-family: 'Inter', Arial, sans-serif;
 	font-style: italic;
 	cursor: pointer;
 	background: rgba(255,255,255,0.075);

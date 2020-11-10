@@ -1,12 +1,13 @@
 .header__button {
+  font-family: 'Inter', Arial, sans-serif;
   line-height: 1.25;
   padding: 5px 14px 5px;
   margin-bottom: 8px;
   border-radius: 30px;
 	flex-shrink: 0;
 	width: auto;
-  color: white;
-  border: 2px solid white;
+  color: #fff;
+  border: 2px solid #fff;
   visibility: hidden;
   position: absolute;
   background: transparent;

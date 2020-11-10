@@ -7,7 +7,7 @@
 @import url(./__subtitle/song__subtitle.css);
 
 .song {
-  color: white;
+  color: #fff;
 	margin-right: auto;
 	width: 100%;
   justify-content: space-between;

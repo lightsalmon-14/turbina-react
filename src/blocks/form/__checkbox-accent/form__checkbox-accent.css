@@ -1,4 +1,5 @@
 .form__checkbox-accent {
+  font-family: 'Inter', Arial, sans-serif;
   text-decoration: underline;
-  color: black;
+  color: #000;
 }

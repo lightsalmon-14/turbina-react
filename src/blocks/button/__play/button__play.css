@@ -4,9 +4,9 @@
   height: 37px;
   transition: all 0.33s;
   flex-shrink: 0;
-	left: 15px;
-	border: none;
-	position: absolute;
+  left: 15px;
+  border: none;
+  position: absolute;
 }
 
 .button__play:hover {

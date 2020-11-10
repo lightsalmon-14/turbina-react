@@ -2,9 +2,9 @@
   background: url('../../../images/open.svg') no-repeat 0 9px;
   width: 27px;
   flex-shrink: 0;
-	height: 40px;
+  height: 40px;
   border: none;
-	transform: all 0.33s;
-	right: 15px;
-	position: absolute;
+  transform: all 0.33s;
+  right: 15px;
+  position: absolute;
 }

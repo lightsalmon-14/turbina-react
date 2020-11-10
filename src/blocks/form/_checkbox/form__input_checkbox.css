@@ -5,13 +5,13 @@
   padding: 0;
   -webkit-appearance: none;
   box-sizing: border-box;
-  border: 2px solid #000000;
+  border: 2px solid #000;
   border-radius: 50%;
   outline: none;
   cursor: pointer;
 }
 
 .form__input_checkbox:checked {
-  background-color: black;
+  background-color: #000;
 }
 
