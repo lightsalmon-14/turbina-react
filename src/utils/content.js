@@ -27,21 +27,21 @@ export const streamings = [
   {
     id: 0,
     name: 'Яндекс.Музыка',
-    href: "1"
+    link: 'https://music.yandex.ru/home'
   },
   {
     id: 1,
     name: 'Spotify',
-    link: "1"
+    link: 'https://www.spotify.com/ru-ru'
   },
   {
     id: 2,
     name: 'Apple Music',
-    link: "1"
+    link: 'https://www.apple.com/ru/apple-music'
   },
   {
     id: 3,
     name: 'VK Music',
-    link: "1"
+    link: 'https://vk.com/vkmusic'
   }
 ]

@@ -30,6 +30,17 @@
   margin-bottom: 0;
 }
 
+@media screen and (max-width: 812px) and (max-height: 425px) {
+  .header__link {
+    line-height: 1.25;
+    padding: 5px 10px 5px;
+    margin-bottom: 4px;
+  }
+  .header__link:after {
+    padding-left: 5px;
+  }
+}
+
 @media screen and (max-width: 475px) {
 .header__link {
     line-height: 1.25;

@@ -22,6 +22,13 @@
   }
 }
 
+@media screen and (max-width: 812px) and (max-height: 425px) {
+  .header__image {
+    width: 270px;
+    height: 82px
+  }
+}
+
 @media screen and (max-width: 475px) {
   .header__image {
     max-width: 270px;
