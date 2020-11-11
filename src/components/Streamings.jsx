@@ -19,9 +19,9 @@ const Streamings = () => {
       </button>
       <nav className={`header__links ${isOpen ? '' : 'button__visible'}`}>
           {streamings.map((stream) => {
-            return <a className="header__link" target="_blank" 
+            return <a className="header__link" target="_blank"
+            href={stream.link}
             key={stream.id}
-            {...stream}
             >{stream.name}</a>
           })}
       </nav>

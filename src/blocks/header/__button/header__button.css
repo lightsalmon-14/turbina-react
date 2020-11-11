@@ -15,6 +15,15 @@
   right: 0;
 }
 
+@media screen and (max-width: 812px) and (max-height: 425px) {
+  .header__button {
+    margin: 13px 13px 0;
+    visibility: visible;
+    font-size: 12px;
+    padding: 5px 10px 5px;
+  }
+}
+
 @media screen and (max-width: 475px) {
   .header__button {
     margin: 13px 13px 0;

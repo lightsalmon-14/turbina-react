@@ -5,6 +5,7 @@ import Player from './Player';
 import Streamings from './Streamings';
 
 function Header() {
+
   return (
     <header className="header">
       <div className="header__menu">
