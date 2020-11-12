@@ -1,16 +1,19 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 import playList from '../utils/songs';
 import PlayingNow from './PlayingNow';
+import Icons from './icons/index';
 
 const Player = () => {
 
 	const [ textButtonState, setTextButtonState ] = useState('Текст песни');
 	const [ currentSong, setCurrentSong ] = useState(playList[0])
 	const [ isPlaylistOpen, setIsPlaylistOpen ] = useState(false)
-	const [ isPlaying, setIsPlaying ] = useState(null)
-	const playPauseButtonRef = useRef()
-	const playlistButtonRef = useRef()
+	const [ isPlaying, setIsPlaying ] = useState(false)
+	const [isClicked, setIsClicked] = React.useState(true);
+	// const playPauseButtonRef = useRef()
+	// const playlistButtonRef = useRef()
 	const togglePlaylistRef = useRef()
+	const videoButtonRef = useRef()
 	const songTextButtonRef = useRef()
 	const audioRef = useRef()
 	const [ songTime, setSongTime ] = useState({ currentTime: 0, songDuration: 0 })
@@ -33,13 +36,9 @@ const Player = () => {
 		if (!isPlaying) {
 				audioRef.current.play()
 				setIsPlaying(currentSong)
-				playPauseButtonRef.current.classList.remove('button__play')
-				playPauseButtonRef.current.classList.add('button__pause')
 		} else {
 				audioRef.current.pause()
-				setIsPlaying(null)
-				playPauseButtonRef.current.classList.add('button__play')
-				playPauseButtonRef.current.classList.remove('button__pause')
+				setIsPlaying(false)
 			}
 		}
 
@@ -58,17 +57,17 @@ const Player = () => {
 	const playlistToggleHandler = (e) => {
 
 		if (!isPlaylistOpen) {
-			playlistButtonRef.current.classList.toggle('button__toggle');
-			playlistButtonRef.current.classList.toggle('button__close');
 			togglePlaylistRef.current.classList.toggle('visible');
 			songTextButtonRef.current.classList.toggle('visible-btn');
+			videoButtonRef.current.classList.toggle('visible-btn');
 			setIsPlaylistOpen(true)
+			setIsClicked(!isClicked);
 		} else {
-			playlistButtonRef.current.classList.toggle('button__toggle');
-			playlistButtonRef.current.classList.toggle('button__close');
 			togglePlaylistRef.current.classList.toggle('visible');
 			songTextButtonRef.current.classList.toggle('visible-btn');
+			videoButtonRef.current.classList.toggle('visible-btn');
 			setIsPlaylistOpen(false)
+			setIsClicked(!isClicked);
 		}
 	}
 
@@ -84,13 +83,29 @@ const Player = () => {
 		}
 
   return (
-	<>
-    <section className="player">
-      <button
+	<section className="player">
+		<div className={`${!isClicked && currentSong.cover ? 'player__cover' : 'player__cover_invisible'}`}>
+			<img
+				src={ currentSong.cover }
+				alt={ currentSong.title }
+				className="player__cover_image" />
+		</div>
+		<div className="player__wrapper">
+    	<div className="player__controls">
+			{
+				<button className="icons" onClick={ playToggleHandler }>
+					{
+						!isPlaying ?
+						<Icons.Play iconClass="icons__play" /> :
+						<Icons.Pause iconClass="icons__pause" />
+					}
+				</button>
+			}
+      {/* <button
 				className="button__play button"
 				ref={ playPauseButtonRef }
 				onClick={ playToggleHandler }
-			/>
+			/> */}
 
 			<div className="song">
 				<div className="song__title">
@@ -117,6 +132,15 @@ const Player = () => {
 					onChange={ dragHandler }
 				/>
       </div>
+
+			<button
+				className="button button__video"
+				ref={ videoButtonRef }
+				onClick={ toggleButtonText }
+			>
+				Клип
+			</button>
+
       <button
 				className="button button__text"
 				ref={ songTextButtonRef }
@@ -125,11 +149,17 @@ const Player = () => {
 				{ textButtonState }
 			</button>
 
-      <button
+			<button className="icons" onClick={ playlistToggleHandler }>
+			{ isClicked ?
+			<Icons.Toggle iconClass="icons__toggle" /> :
+			<Icons.Close iconClass="icons__close" />
+			}
+			</button>
+      {/* <button
 				className="button button__toggle"
 				ref={ playlistButtonRef }
 				onClick={ playlistToggleHandler }
-			/>
+			/> */}
 			{ currentSong &&
 				<audio
 					onCanPlay={ songTimeUpdateHandler }
@@ -139,9 +169,9 @@ const Player = () => {
 					onEnded={ nextRandomSong }
 				/>
 			}
-    </section>
+    </div>
 
-		<section className="playlist" ref={ togglePlaylistRef }>
+			<div className="playlist" ref={ togglePlaylistRef }>
       <h4 className="song__subtitle">Релизы</h4>
 			{ (Object.keys(playList).length !== 0) ?
 					<ul className="song__list">
@@ -159,8 +189,9 @@ const Player = () => {
 					</ul>
 				: <p className="playlist__text">Больше релизов не найдено</p>
 			}
-		</section>
-	</>
+		</div>
+		</div>
+	</section>
   )
 }
 

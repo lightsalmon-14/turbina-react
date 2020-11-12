@@ -5,7 +5,7 @@
   margin: 15px 15px 0;
 }
 
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 585px) {
   .header__links {
     visibility: hidden;
     margin: 48px 13px 0;

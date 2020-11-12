@@ -2,8 +2,7 @@
 @import url(./__text/playlist__text.css);
 
 .playlist {
-  margin-bottom: 10px;
-  margin-right: 50px;
+	margin: 0 50px 10px 60px;
   max-height: 0;
   opacity: 0;
   transition: all 0.66s;
@@ -11,6 +10,12 @@
   overflow-x: hidden;
   scrollbar-face-color: #000;
   scroll-behavior: smooth;
+}
+
+@media screen and (max-width: 585px) {
+	.playlist {
+		/* order: 3; */
+	}
 }
 
 .playlist::-webkit-scrollbar-button {

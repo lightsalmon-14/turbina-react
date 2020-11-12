@@ -6,6 +6,6 @@
 	flex-shrink: 0;
 	transform: rotate(90deg) translate(6%, 0%);
 	border: none;
-	right: 15px;
+	right: 0px;
 	position: absolute;
 }
