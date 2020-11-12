@@ -1,7 +1,7 @@
 @import url(./_song/playlist_song.css);
 @import url(./__text/playlist__text.css);
 
-.playlist {
+.audioPlayer__playlist {
 	margin: 0 50px 10px 60px;
   max-height: 0;
   opacity: 0;
@@ -12,19 +12,13 @@
   scroll-behavior: smooth;
 }
 
-@media screen and (max-width: 585px) {
-	.playlist {
-		/* order: 3; */
-	}
-}
-
-.playlist::-webkit-scrollbar-button {
+.audioPlayer__playlist::-webkit-scrollbar-button {
   background-repeat: no-repeat;
   width:5px;
   height:10px
 }
 
-.playlist::-webkit-scrollbar-track {
+.audioPlayer__playlist::-webkit-scrollbar-track {
   background-color: rgba(243,243,243,0.2);
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -32,22 +26,22 @@
 	margin-bottom: 10px;
 }
 
-.playlist::-webkit-scrollbar-thumb {
+.audioPlayer__playlist::-webkit-scrollbar-thumb {
   -webkit-border-radius: 3px;
   border-radius: 3px;
   background-color: rgba(255,255,255,0.3);
 }
 
-.playlist::-webkit-scrollbar-thumb:hover{
+.audioPlayer__playlist::-webkit-scrollbar-thumb:hover{
   background-color: rgba(255,255,255,0.6);
 }
 
-.playlist::-webkit-resizer{
+.audioPlayer__playlist::-webkit-resizer{
   background-repeat:no-repeat;
   width:5px;
   height:0px
 }
 
-.playlist::-webkit-scrollbar{
+.audioPlayer__playlist::-webkit-scrollbar{
   width: 5px;
 }

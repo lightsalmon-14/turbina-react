@@ -14,13 +14,11 @@
 	font-size: 20px;
 	font-family: 'Inter', Arial, sans-serif;
   font-weight: 400;
-	width: 100%;
 	display: flex;
 }
 
 .song {
   color: #fff;
-	width: 100%;
 	min-height: 35px;
 	overflow: hidden;
   white-space: nowrap;

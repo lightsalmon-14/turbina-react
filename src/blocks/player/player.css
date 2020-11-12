@@ -1,66 +1,115 @@
-.player {
-  margin-top: auto;
+.audioPlayer {
+  display: grid;
+	padding: 0 0 0 25px;
+  grid-template-columns: min-content min-content auto auto min-content min-content ;
+  grid-template-rows: auto auto;
+  gap: 0px 0px;
+	margin-top: auto;
   height: auto;
-  padding: 0px 25px 20px 25px;
-  display: flex;
-  box-sizing: border-box;
-	flex-wrap: wrap;
+  grid-template-areas:
+    "cover controls song song buttons toggle"
+    "cover playlist playlist playlist playlist playlist";
+	box-sizing: border-box;
 }
 
-.player__cover {
-	flex-grow: 0;
-	display: flex;
-	height: auto;
+.audioPlayer__cover {
+	grid-area: cover;
+	padding-top: 0px;
+	border-radius: 4px;
 	width: 176px;
-	transition: all 0.66s;
 }
 
-.player__cover_invisible {
+.audioPlayer__cover_invisible {
 	height: 0px;
 	width: 0;
 	opacity: 0;
 	transition: all 0.66s;
 }
 
-.player__wrapper {
-	flex-shrink: 0;
-	flex-grow: 1;
+.audioPlayer__controls {
+	grid-area: controls;
+
+}
+
+.audioPlayer__song {
+	grid-area: song;
+}
+
+.audioPlayer__buttons {
+	grid-area: buttons;
+	align-self: flex-start;
 	display: flex;
-	flex-direction: column;
-	max-height: 176px;
-	width: calc(100% - 176px);
+
 }
 
-.player__cover_image {
-	width: 176px;
-	height: 176px;
-	transition: all 0.66s;
-}
+.audioPlayer__toggle {
+	grid-area: toggle;
+	padding-top: 4px;
 
-.player__controls {
-	display: flex;
-	box-sizing: border-box;
-	position: relative;
 }
+.audioPlayer__playlist { grid-area: playlist; }
 
-@media screen and (max-width: 475px) {
-	.player__controls {
-		flex-wrap: wrap;
+@media screen and (max-width: 768px) {
+	.audioPlayer {
+  	grid-template-columns: min-content auto auto auto min-content min-content ;
+  	grid-template-rows: auto auto;
+    grid-template-areas:
+    "controls song song song buttons toggle"
+    "cover playlist playlist playlist playlist playlist";
 	}
 }
 
 @media screen and (max-width: 585px) {
-	.player__cover {
-		flex-grow: 0;
-		display: flex;
-		height: auto;
-		width: 100%;
-		transition: all 0.66s;
-		order: 2;
-	}
-
-	.player__cover_image {
-		width: 100%;
-		height: auto;
+	.audioPlayer {
+		grid-template-columns: min-content auto min-content;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+    "controls song toggle"
+    "cover cover cover"
+    "buttons buttons buttons"
+    "playlist playlist playlist";
 	}
 }
+
+/* .song {
+  margin-top: auto;
+  height: auto;
+  padding: 0px 25px 20px 25px;
+  display: flex;
+  box-sizing: border-box;
+	flex-wrap: wrap;
+	position: relative;
+}
+
+.song__cover {
+	height: 176px;
+	width: 176px;
+	transition: all 0.66s;
+}
+
+.song__cover_invisible {
+	height: 0px;
+	width: 0;
+	opacity: 0;
+	transition: all 0.66s;
+}
+
+.song__wrapper {
+	flex-shrink: 0;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+
+	width: calc(100% - 176px);
+}
+
+.song__buttons {
+	display: flex;
+}
+
+.song__controls {
+	display: flex;
+	box-sizing: border-box;
+	position: relative;
+}
+ */
