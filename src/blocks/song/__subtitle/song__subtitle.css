@@ -4,8 +4,8 @@
   color: #fff;
   font-size: 20px;
   line-height: 1.2;
+  font-weight: 400;
   font-family: 'Inter', Arial, sans-serif;
-  font-style: italic;
 }
 
 @media screen and (max-width: 1190px) {
@@ -14,7 +14,7 @@
   }
 }
 
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 575px) {
   .song__subtitle {
     font-size: 14px;
     line-height: 1.36;

@@ -10,7 +10,7 @@
   margin: 40px 0 40px;
 }
 
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 575px) {
   .form__field {
     margin-bottom: 6px;
   }

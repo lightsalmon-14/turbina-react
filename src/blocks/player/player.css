@@ -36,14 +36,12 @@
 
 .audioPlayer__controls {
   grid-area: controls;
-  padding-top: 8px;
-  padding-right: 15px;
-
+  padding-right: 20px;
 }
 
 .audioPlayer__song {
   grid-area: song;
-  margin-bottom: 20px;
+	margin-right: 10px;
 }
 
 .audioPlayer__buttons {
@@ -52,36 +50,11 @@
   display: flex;
 }
 
-.icons {
-  transition: all 0.66s;
-  background: transparent;
-  border: none;
-  padding: 0;
-}
-
-.button__video {
-	font-family: 'Inter', Arial, sans-serif;
-	line-height: 1.2;
-	border-radius: 30px;
-	opacity: 0;
-	color: #000;
-	transition: opacity 0.66s;
-	background: #fff;
-	display: none;
-	white-space: nowrap;
-	padding: 6px 18px 6px;
-	margin: 0;
-	height: 35px;
-	width: 94px;
-	margin-left: 20px;
-}
 
 .audioPlayer__toggle {
 	grid-area: toggle;
-	padding-top: 8px;
   padding-left: 20px;
   outline: none;
-
 }
 .audioPlayer__playlist { grid-area: playlist; }
 
@@ -92,7 +65,7 @@
   }
   .button__video {
     padding: 6px 16px 6px;
-  }
+	}
 }
 
 @media screen and (max-width: 975px) {
@@ -101,36 +74,35 @@
     grid-template-rows: auto auto;
     grid-template-areas:
     "controls song song song song buttons toggle"
-    "cover cover playlist playlist playlist playlist playlist";
+		"cover cover playlist playlist playlist playlist playlist";
+		margin: auto 14px 0;
   }
   .audioPlayer__cover {
     width: 112px;
-    height: 112px;
-    margin-right: 30px;
-    margin-left: 35px;
+		height: 112px;
+		margin: 20px 30px 0 35px;
 	}
 	.audioPlayer__playlist {
 		margin: 0;
 	}
+
 }
 
-@media screen and (max-width: 585px) {
+@media screen and (max-width: 635px) {
 	.audioPlayer {
-		grid-template-columns: auto auto auto;
+		grid-template-columns: min-content auto min-content;
     grid-template-rows: auto auto auto auto;
     grid-template-areas:
     "controls song toggle"
     "cover cover cover"
-    "buttons buttons buttons"
+    ". buttons ."
     "playlist playlist playlist";
-    margin: auto;
   }
 
   .audioPlayer__cover {
-    width: 240px;
-    height: 240px;
-    margin: auto;
-    padding: 0 40px 20px;
+    min-width: 300px;
+		margin: 20px auto 20px;
+		height: auto;
   }
 
   .button__video {
@@ -140,11 +112,42 @@
   .audioPlayer__song {
     margin: auto 14px 0;
   }
-  .audioPlayer__buttons {
-    margin: auto;
-    padding: 0 40px 20px;
-  }
+
   .button__video {
     min-width: 74px;
-  }
+	}
+	.audioPlayer__buttons {
+		margin: auto;
+		margin-bottom: 20px;
+	}
+}
+
+@media screen and (max-width: 455px) {
+	.audioPlayer {
+		grid-template-columns: min-content auto min-content;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+    "controls song toggle"
+    "cover cover cover"
+    ". buttons ."
+    "playlist playlist playlist";
+	}
+
+	.audioPlayer__song {
+    margin: auto 0 0;
+	}
+	
+	.audioPlayer__cover {
+    min-width: 240px;
+		height: auto;
+	}
+	.audioPlayer__controls {
+		padding-right: 14px;
+	}
+	.audioPlayer__toggle {
+		padding-left: 14px;
+	}
+	.audioPlayer__buttons {
+		margin: auto;
+	}
 }

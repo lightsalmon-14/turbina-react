@@ -1,11 +1,12 @@
 .icons {
   outline: none;
-	width: 30px;
   cursor: pointer;
 	transition: all 0.66s;
 	background: none;
 	border: none;
-	flex-shrink: 0;
+  flex-shrink: 0;
+  border: none;
+  padding: 0;
 }
 
 .icons__play {
@@ -27,3 +28,4 @@
   width: 24px;
   height: 24px;
 }
+

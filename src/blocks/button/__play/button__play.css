@@ -1,7 +1,5 @@
 .button__play {
   background: url('../../../images/play.svg') no-repeat 0 9px;
-  width: 20px;
-  height: 37px;
   transition: all 0.33s;
   flex-shrink: 0;
   left: 0px;

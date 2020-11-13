@@ -7,31 +7,4 @@
   margin: 0;
 }
 
-@media screen and (max-width: 585px) {
-  .header__title {
-		position: static;
-		text-align: center;
-		transform: none;
-  }
-}
 
-/* @media screen and (max-width: 1190px) {
-  .header__title {
-    width: 600px;
-    height: 186px;
-  }
-}
-
-@media screen and (max-width: 975px) {
-  .header__title {
-    width: 620px;
-    height: 192px;
-  }
-}
-
-@media screen and (max-width: 475px) {
-  .header__title {
-    width: 270px;
-    height: 82px;
-  }
-} */
