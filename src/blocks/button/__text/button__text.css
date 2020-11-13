@@ -2,20 +2,38 @@
   font-family: 'Inter', Arial, sans-serif;
   line-height: 1.2;
   border-radius: 30px;
-  flex-shrink: 0;
   opacity: 0;
   color: #fff;
   transition: opacity 0.66s;
   background: transparent;
-  margin: 0px 30px 20px 0px;
+  margin: 0 0 0 10px;
   display: none;
-  width: fit-content;
+	white-space: nowrap;
   padding: 6px 18px 6px;
 }
 
-.button__text:hover {
+.button__video:hover {
 	font-style: italic;
 }
+
+.button__video {
+  font-family: 'Inter', Arial, sans-serif;
+  line-height: 1.2;
+  border-radius: 30px;
+  opacity: 0;
+  color: #000;
+  transition: opacity 0.66s;
+  background: #fff;
+  margin: 0 0 0 10px;
+  display: none;
+	white-space: nowrap;
+  padding: 6px 18px 6px;
+}
+
+.button__video:hover {
+	font-style: italic;
+}
+
 
 @media screen and (max-width: 475px) {
 	.button__text {

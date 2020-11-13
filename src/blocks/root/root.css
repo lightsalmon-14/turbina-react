@@ -8,14 +8,7 @@
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   background: url(../../images/top_background.jpg) no-repeat fixed center;
-  background-size: cover;
 }
-
-/* * {
-  outline-style: solid;
-  outline-width: 1px;
-  outline-color: red;
-} */
 
 @media screen and (max-width: 1190px) {
   .root {

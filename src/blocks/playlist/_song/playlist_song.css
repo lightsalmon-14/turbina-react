@@ -1,10 +1,14 @@
-.playlist_song:hover {
+.playlist_song {
 	font-family: 'Inter', Arial, sans-serif;
 	font-style: italic;
 	cursor: pointer;
-	background: rgba(255,255,255,0.075);
 	transition: 0.99s;
+	line-height: 1.9;
+	border-radius: 10px;
+}
+
+.playlist_song:hover {
+	background: rgba(255,255,255,0.075);
 	transition-property: background;
 	backdrop-filter: blur(8px);
-	border-radius: 10px;
 }

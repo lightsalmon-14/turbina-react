@@ -1,0 +1,29 @@
+.icons {
+  outline: none;
+	min-width: 60px;
+  cursor: pointer;
+	transition: all 0.66s;
+	background: none;
+	border: none;
+	flex-shrink: 0;
+}
+
+.icons__play {
+  width: 16px;
+  height: 20px;
+}
+
+.icons__pause {
+  width: 13px;
+  height: 16px;
+}
+
+.icons__toggle {
+  width: 24px;
+  height: 24px;
+}
+
+.icons__close {
+  width: 24px;
+  height: 24px;
+}
