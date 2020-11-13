@@ -1,6 +1,6 @@
 .audioPlayer {
   display: grid;
-	margin: 0 25px 0;
+	margin: 10px 25px 0;
   grid-template-columns: min-content min-content min-content auto auto min-content min-content ;
   grid-template-rows: auto auto;
   gap: 0px 0px;
@@ -24,6 +24,7 @@
 
 .audioPlayer__playlist {
   opacity: 0;
+	padding-left: 22px;
   display: none;
 }
 
@@ -42,6 +43,7 @@
 .audioPlayer__song {
   grid-area: song;
 	margin-right: 10px;
+	margin-bottom: 10px;
 }
 
 .audioPlayer__buttons {
@@ -136,7 +138,7 @@
 	.audioPlayer__song {
     margin: auto 0 0;
 	}
-	
+
 	.audioPlayer__cover {
     min-width: 240px;
 		height: auto;

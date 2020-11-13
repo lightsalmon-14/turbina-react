@@ -11,17 +11,19 @@ const Player = () => {
 	const [ isPlaying, setIsPlaying ] = useState(false)
 	const [ isClicked, setIsClicked ] = React.useState(true);
 	const togglePlaylistRef = useRef()
-	const videoButtonRef = useRef()
-	const songTextButtonRef = useRef()
 	const audioRef = useRef()
 	const [ songTime, setSongTime ] = useState({ currentTime: 0, songDuration: 0 })
 
 	const nextRandomSong = (min = 0, max = playList.length) => {
 		const randomNumber = Math.floor(Math.random() * (max - min)) + min
 		setCurrentSong(playList[randomNumber]);
-		console.log(currentSong)
 		audioRef.current.play()
 	}
+
+	useEffect((min = 0, max = playList.length) => {
+		const randomNumber = Math.floor(Math.random() * (max - min)) + min
+		setCurrentSong(playList[randomNumber]);
+	}, []);
 
 	const isPlayingHandler = (e) => {
 		if (e.type === 'playing') {
@@ -66,14 +68,10 @@ const Player = () => {
 
 		if (!isPlaylistOpen) {
 			togglePlaylistRef.current.classList.toggle('visible');
-			songTextButtonRef.current.classList.toggle('visible-btn');
-			videoButtonRef.current.classList.toggle('visible-btn');
 			setIsPlaylistOpen(true)
 			setIsClicked(!isClicked);
 		} else {
 			togglePlaylistRef.current.classList.toggle('visible');
-			songTextButtonRef.current.classList.toggle('visible-btn');
-			videoButtonRef.current.classList.toggle('visible-btn');
 			setIsPlaylistOpen(false)
 			setIsClicked(!isClicked);
 		}
@@ -127,22 +125,19 @@ const Player = () => {
         <input
 					type="range" min="0"
 					value={ songTime.currentTime }
-					max={ songTime.songDuration }
-					name="songTime" className="song__duration"
+					max={ '0:00' || songTime.songDuration }
+					name="songTime"
+					className="song__duration"
 					onChange={ dragHandler }
 				/>
       </div>
     <div className="audioPlayer__buttons">
-			<button
-				className="button button__video"
-				ref={ videoButtonRef }
-			>
-				<Icons.Play iconClass="icons__play_small" fill={'#000'} />Клип
+			<button className={`button button__video ${isPlaylistOpen && currentSong.video ? 'visible-btn' : null}`}>
+				Клип
 			</button>
 
       <button
-				className="button button__text"
-				ref={ songTextButtonRef }
+				className={`button button__text ${isPlaylistOpen ? 'visible-btn' : null}`}
 				onClick={ toggleButtonText }
 			>
 				{ textButtonState }
