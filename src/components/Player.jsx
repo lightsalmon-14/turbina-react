@@ -101,11 +101,11 @@ const Player = () => {
 			}
 		</div>
     <div className="audioPlayer__song">
-				<div className="song__title">
-					{
+				<div className="song__title">song and artist
+					{/* {
 					currentSong ?
 					`${ currentSong.artist } — ${ currentSong.title }` : 'Песен не добавлено'
-					}
+					} */}
 
 				<span className="song__timer">
 					{
