@@ -2,6 +2,7 @@ import React, { useState, useRef, useCallback, useEffect } from 'react';
 import playList from '../utils/songs';
 import PlayingNow from './PlayingNow';
 import Icons from './icons/index';
+import { Scrollbars } from 'react-custom-scrollbars';
 
 const Player = () => {
 
@@ -71,7 +72,7 @@ const Player = () => {
 		}
 	}
 
-		const songTimeUpdateHandler = async (e) => {
+		const songTimeUpdateHandler = (e) => {
 			const currentTime =  e.target.currentTime
 			const songDuration = e.target.duration
 			setSongTime({ currentTime, songDuration })
@@ -158,7 +159,7 @@ const Player = () => {
 				/>
 			}
 		</div>
-		<div className="audioPlayer__playlist" ref={ togglePlaylistRef }>
+		<Scrollbars  className="audioPlayer__playlist" ref={ togglePlaylistRef }>
       <h4 className="song__subtitle">Релизы</h4>
 			{ (Object.keys(playList).length !== 0) ?
 					<ul className="song__list">
@@ -176,7 +177,7 @@ const Player = () => {
 					</ul>
 				: <p className="playlist__text">Больше релизов не найдено</p>
 			}
-		</div>
+		</Scrollbars>
   </section>
   )
 }
