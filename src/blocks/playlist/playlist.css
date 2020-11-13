@@ -8,11 +8,11 @@
   transition: all 0.66s;
   overflow-y: scroll;
   overflow-x: hidden;
-  /* scrollbar-face-color: #000;
-  scroll-behavior: smooth; */
+  scrollbar-face-color: #000;
+  scroll-behavior: smooth;
 }
 
-/* .audioPlayer__playlist::-webkit-scrollbar-button {
+.audioPlayer__playlist::-webkit-scrollbar-button {
   background-repeat: no-repeat;
   width:5px;
   height:10px
@@ -44,4 +44,4 @@
 
 .audioPlayer__playlist::-webkit-scrollbar{
   width: 5px;
-} */
+}

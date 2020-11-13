@@ -13,6 +13,11 @@
   height: 20px;
 }
 
+.icons__play_small {
+  width: 8px;
+  height: 10px;
+}
+
 .icons__pause {
   width: 13px;
   height: 16px;

@@ -2,7 +2,6 @@ import React, { useState, useRef, useCallback, useEffect } from 'react';
 import playList from '../utils/songs';
 import PlayingNow from './PlayingNow';
 import Icons from './icons/index';
-import { Scrollbars } from 'react-custom-scrollbars';
 
 const Player = () => {
 
@@ -10,36 +9,44 @@ const Player = () => {
 	const [ currentSong, setCurrentSong ] = useState(playList[0])
 	const [ isPlaylistOpen, setIsPlaylistOpen ] = useState(false)
 	const [ isPlaying, setIsPlaying ] = useState(false)
-	const [isClicked, setIsClicked] = React.useState(true);
-	// const playPauseButtonRef = useRef()
-	// const playlistButtonRef = useRef()
+	const [ isClicked, setIsClicked ] = React.useState(true);
 	const togglePlaylistRef = useRef()
 	const videoButtonRef = useRef()
 	const songTextButtonRef = useRef()
 	const audioRef = useRef()
 	const [ songTime, setSongTime ] = useState({ currentTime: 0, songDuration: 0 })
 
-	const nextRandomSong = useCallback(() => {
-		audioRef.current.play()
-	}, [])
-
-	useEffect((min = 0, max = playList.length) => {
+	const nextRandomSong = (min = 0, max = playList.length) => {
 		const randomNumber = Math.floor(Math.random() * (max - min)) + min
 		setCurrentSong(playList[randomNumber]);
-	}, [nextRandomSong]);
+		console.log(currentSong)
+		audioRef.current.play()
+	}
 
-	const playToggleHandler = (e) => {
-		if (e.target.textContent) {
-			const selectedSong = playList.find(song => song.artist + ' — ' + song.title === e.target.textContent)
-			setCurrentSong(selectedSong)
+	const isPlayingHandler = (e) => {
+		if (e.type === 'playing') {
+			setIsPlaying(true)
 		}
+		if (e.type === 'pause') {
+			setIsPlaying(false)
+		}
+	}
 
-		if (!isPlaying) {
+	const setTrack = (e) => {
+		const selectedSong = playList.find(song =>
+		song.artist + ' feat. ' + song.originalArtist + ' — ' + song.title === e.target.textContent)
+		setCurrentSong(selectedSong)
+	}
+
+	const playTrack = () => {
+		audioRef.current.play()
+	}
+
+	const playToggleHandler = () => {
+			if (!isPlaying) {
 				audioRef.current.play()
-				setIsPlaying(currentSong)
-		} else {
+			} else {
 				audioRef.current.pause()
-				setIsPlaying(false)
 			}
 		}
 
@@ -85,27 +92,27 @@ const Player = () => {
 
   return (
 	<section className="audioPlayer">
-		<img
+		{	(Object.values(playList).length !== 0) && <img
 			src={ currentSong.cover }
 			alt={ currentSong.title }
 			className={`${!isClicked && currentSong.cover ? 'audioPlayer__cover' : 'audioPlayer__cover_invisible'}`}
-		/>
+		/> }
     <div className="audioPlayer__controls">
 			{
 				<button className="icons" onClick={ playToggleHandler }>
 					{
 						!isPlaying ?
-						<Icons.Play iconClass="icons__play" /> :
+						<Icons.Play iconClass="icons__play" fill={'#fff'} /> :
 						<Icons.Pause iconClass="icons__pause" />
 					}
 				</button>
 			}
 		</div>
     <div className="audioPlayer__song">
-				<div className="song__title">
+				<div className="song__title animated">
 					{
 					currentSong ?
-					`${ currentSong.artist } — ${ currentSong.title }` : 'Песен не добавлено'
+					`${ currentSong.artist } .feat ${ currentSong.originalArtist } — ${ currentSong.title }` : 'Песен не добавлено'
 					}
 
 				<span className="song__timer">
@@ -129,9 +136,8 @@ const Player = () => {
 			<button
 				className="button button__video"
 				ref={ videoButtonRef }
-				onClick={ toggleButtonText }
 			>
-				Клип
+				<Icons.Play iconClass="icons__play_small" fill={'#000'} />Клип
 			</button>
 
       <button
@@ -156,11 +162,15 @@ const Player = () => {
 					src={ currentSong.url }
 					ref={ audioRef }
 					onEnded={ nextRandomSong }
+					onPlaying={ isPlayingHandler }
+					onPause={ isPlayingHandler }
 				/>
 			}
 		</div>
-		<Scrollbars  className="audioPlayer__playlist" ref={ togglePlaylistRef }>
-      <h4 className="song__subtitle">Релизы</h4>
+		<div className="audioPlayer__playlist" ref={ togglePlaylistRef }>
+      { textButtonState === 'Текст песни' ?
+			<h4 className="song__subtitle">Релизы:</h4> :
+			<h4 className="song__subtitle">Текст песни:</h4> }
 			{ (Object.keys(playList).length !== 0) ?
 					<ul className="song__list">
 						{
@@ -168,16 +178,17 @@ const Player = () => {
 
 							playList.map((song, key) => {
 								const activeSongClass = isPlaying && currentSong === song ? 'song_active' : '';
-								return <li onClick={ playToggleHandler } className={`song__title playlist_song ${ activeSongClass }`} key={ key }>{ activeSongClass ? <PlayingNow /> : '' }
-									{`${ song.artist } — ${ song.title }`}
+								return <li onMouseDown={ setTrack } onClick={ playTrack } className={`song__title playlist_song ${ activeSongClass }`} key={ key }>{ activeSongClass ? <PlayingNow /> : '' }
+									{`${ song.artist } feat. ${ song.originalArtist } — ${ song.title }`}
 								</li> }) :
-
-							currentSong.text.map(paragraph => <p className="playlist__text">{ paragraph }</p>)
+							<p className="playlist__text">
+							{ currentSong.text }
+							</p>
 						}
 					</ul>
 				: <p className="playlist__text">Больше релизов не найдено</p>
 			}
-		</Scrollbars>
+		</div>
   </section>
   )
 }
