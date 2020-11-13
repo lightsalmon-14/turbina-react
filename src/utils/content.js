@@ -45,3 +45,9 @@ export const streamings = [
     link: 'https://vk.com/vkmusic'
   }
 ]
+
+export const externalLinks = {
+  store: 'https://marshakbooks.ru',
+  yandex: 'https://praktikum.yandex.ru',
+  terms: 'https://api.kanye.rest'
+}

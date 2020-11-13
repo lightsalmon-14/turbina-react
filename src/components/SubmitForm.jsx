@@ -3,6 +3,7 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import FormInput from './FormInput';
 import CheckBox from './CheckBox';
+import { postForm } from '../utils/api';
 
 function SubmitForm() {
 
@@ -44,31 +45,27 @@ function SubmitForm() {
         })}
 
         onSubmit={(values, { setSubmitting, resetForm }) => {
-          fetch('url', {
-            method: 'POST',
-            body: JSON.stringify({ values }),
-            headers: {
-              'Content-Type': 'application/json; charset=UTF-8'
-            }
-          })
-            // .then((res) => {
-            //   if (res.ok) {
-            //     return res.json()
-            //   }
-            //   return Promise.reject(`Ошибка: ${res.status}`); 
-            // }) 
+          postForm(values)
             .then(() => {
               setTimeout(() => {
                 setSubmitting(false);
-                console.log((JSON.stringify(values, null, 2)));
                 setIsSubmitingError('');
-                setIsSubmitingButton('Ура, форма отправлена!')
+                setIsSubmitingButton('Ура, форма отправлена!');
                 resetForm('');
+                console.log((JSON.stringify(values, null, 2)));
               }, 1500)
             })
+            .then(() => {
+              setTimeout(() => {
+                setIsSubmitingButton('Отправить другую форму');
+              }, 3000)
+            })
             .catch((err) => {
-              console.log(err);
-              setIsSubmitingError('Упс, что-то пошло не так и форма не отправилась, попробуйте ещё раз!');
+              setTimeout(() => {
+                console.log(err);
+                setIsSubmitingError('Упс, что-то пошло не так и форма не отправилась, попробуйте ещё раз!');
+                resetForm('');
+              }, 1500)
             })
         }}
       >
