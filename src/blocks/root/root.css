@@ -8,6 +8,7 @@
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   background: url(../../images/top_background.jpg) no-repeat fixed center;
+  background-size: cover;
 }
 
 @media screen and (max-width: 1190px) {
@@ -16,7 +17,7 @@
   }
 }
 
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 575px) {
   .root {
     font-size: 12px;
   }

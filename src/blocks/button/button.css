@@ -8,7 +8,6 @@
 @import url(../button/__visible/button__visible.css);
 @import url(../button/_text/button__visible_text.css);
 
-
 .button {
   outline: none;
   cursor: pointer;

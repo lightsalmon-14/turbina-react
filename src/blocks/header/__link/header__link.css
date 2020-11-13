@@ -41,7 +41,7 @@
   }
 }
 
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 575px) {
 .header__link {
     line-height: 1.25;
     padding: 5px 14px 5px;

@@ -16,9 +16,3 @@
 	position: relative;
 }
 
-@media screen and (max-width: 585px) {
-	.header {
-		height: auto;
-		max-height: none;
-	}
-}

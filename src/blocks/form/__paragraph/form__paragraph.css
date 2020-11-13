@@ -17,7 +17,7 @@
   }
 }
 
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 575px) {
   .form__paragraph {
     margin: 0 0 40px;
     line-height: 1.33;

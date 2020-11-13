@@ -1,7 +1,5 @@
 .button__pause {
   background: url('../../../images/pause.svg') no-repeat 0 9px;
-  width: 20px;
-  height: 40px;
   transition: all 0.33s;
   flex-shrink: 0;
 	left: 0px;

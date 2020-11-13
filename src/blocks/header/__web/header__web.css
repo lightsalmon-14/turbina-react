@@ -9,7 +9,7 @@
   }
 }
 
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 575px) {
   .header__web {
     margin: 16px;
   }

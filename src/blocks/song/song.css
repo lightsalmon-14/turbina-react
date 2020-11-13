@@ -6,25 +6,12 @@
 @import url(./_active/song_active.css);
 @import url(./__subtitle/song__subtitle.css);
 
-.song__title {
-  /* white-space: nowrap; */
-	overflow: hidden;
-  /* text-overflow: ellipsis; */
-	color: #fff;
-	font-size: 20px;
-	font-family: 'Inter', Arial, sans-serif;
-  font-weight: 400;
-	display: flex;
-}
-
 .song {
   color: #fff;
 	min-height: 35px;
-	/* overflow: hidden; */
   white-space: nowrap;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	/* text-overflow: ellipsis; */
 	width: 100%;
 }
