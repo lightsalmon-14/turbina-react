@@ -5,8 +5,9 @@ import Player from './Player';
 import Streamings from './Streamings';
 import { externalLinks as link } from '../utils/content';
 
-function Header() {
+function Header(props) {
 
+	console.log(props.isBlur)
   return (
     <header className="header">
       <div className="header__menu">
@@ -17,7 +18,7 @@ function Header() {
       <h1 className="header__title">
         <img className="header__image" src={title} alt="Турбина" />
       </h1>
-      <Player />
+      <Player blurHandler={props.onBlur} />
     </header>
   )
 }
