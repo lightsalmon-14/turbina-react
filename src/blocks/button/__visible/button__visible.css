@@ -1,13 +1,13 @@
 .visible-btn {
   opacity: 1;
   transition: all 0.66s;
-	visibility: visible;
-	display: block;
-	border: solid 2px #fff;
+  visibility: visible;
+  display: block;
+  border: solid 2px #fff;
 }
 
 .button__visible {
   opacity: 1;
   transition: all 0.66s;
-	visibility: visible;
+  visibility: visible;
 }

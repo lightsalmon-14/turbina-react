@@ -1,9 +1,9 @@
 .icons {
   outline: none;
   cursor: pointer;
-	transition: all 0.66s;
-	background: none;
-	border: none;
+  transition: all 0.66s;
+  background: none;
+  border: none;
   flex-shrink: 0;
   border: none;
   padding: 0;
@@ -33,4 +33,5 @@
   width: 24px;
   height: 24px;
 }
+
 

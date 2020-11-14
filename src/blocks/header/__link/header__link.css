@@ -9,21 +9,21 @@
   text-decoration: none;
   width: fit-content;
   color: #fff;
-	transition: all 0.75s;
+  transition: all 0.75s;
   border: 2px solid #fff;
 }
 
 .header__link:hover {
-	background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.1);
   font-style: italic;
   cursor: pointer;
-	transform: scale(1.04);
+  transform: scale(1.04);
 }
 
 .header__link:after {
   content:'\2197\00FE0E';
-	font-style: normal;
-	padding-left: 10px;
+  font-style: normal;
+  padding-left: 10px;
 }
 
 .header__link:last-child {

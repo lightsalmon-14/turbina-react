@@ -1,12 +1,12 @@
 .song_active {
   font-family: 'Inter', Arial, sans-serif;
-	font-style: italic;
-	cursor: pointer;
-	background: rgba(255,255,255,0.15);
-	transition: 0.99s;
-	backdrop-filter: blur(3px);
-	border-radius: 10px;
-	position: relative;
+  font-style: italic;
+  cursor: pointer;
+  background: rgba(255,255,255,0.15);
+  transition: 0.99s;
+  backdrop-filter: blur(3px);
+  border-radius: 10px;
+  position: relative;
 }
 
 /* .song_active:after {
@@ -23,11 +23,11 @@
 
 .playingNow {
   position: relative;
-	align-self: center;
+  align-self: center;
   width: 21px;
   height: 21px;
   top: 0px;
-	margin: 0 5px;
+  margin: 0 5px;
   flex-shrink: 0;
 }
 
