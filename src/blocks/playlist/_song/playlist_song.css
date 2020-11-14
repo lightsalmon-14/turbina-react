@@ -1,17 +1,17 @@
 .playlist_song {
-	font-family: 'Inter', Arial, sans-serif;
-	cursor: pointer;
-	transition: 0.99s;
-	line-height: 1.9;
-	border-radius: 10px;
-	font-weight: 400;
+  font-family: 'Inter', Arial, sans-serif;
+  cursor: pointer;
+  transition: 0.99s;
+  line-height: 1.9;
+  border-radius: 10px;
+  font-weight: 400;
 }
 
 .playlist_song:hover {
 	background: rgba(255,255,255,0.075);
-	transition-property: background;
-	backdrop-filter: blur(8px);
-	font-style: italic;
+  transition-property: background;
+  backdrop-filter: blur(8px);
+  font-style: italic;
 }
 
 
@@ -29,6 +29,6 @@
 
 @media screen and (max-width: 812px) and (max-height: 425px) {
   .playlist_song {
-		line-height: 1.9;
+    line-height: 1.9;
   }
 }

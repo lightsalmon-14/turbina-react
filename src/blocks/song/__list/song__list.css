@@ -1,14 +1,14 @@
 .song__list {
-	padding: 0;
-	margin: 0;
-	list-style: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 @media screen and (max-width: 786px) {
   .song__list {
-		display: table;
-		table-layout: fixed;
-		width: 100%;
-		padding-right: 5px;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    padding-right: 5px;
   }
 }

@@ -8,11 +8,11 @@
 @import url(../header/__button/header__button.css);
 
 .header {
-	height: 100vh;
-	width: 100%;
-	max-height: 780px;
-	display: flex;
-	flex-direction: column;
-	position: relative;
+  height: 100vh;
+  width: 100%;
+  max-height: 780px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
