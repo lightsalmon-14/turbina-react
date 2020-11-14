@@ -19,11 +19,11 @@ const Player = (props) => {
 		setCurrentSong(playList[randomNumber]);
 	}, []);
 
-	const toggleBlur = () => {
-		if (isPlaylistOpen) {
-			props.blurHandler(true)
+	const toggleBlur = (blur) => {
+		if (blur) {
+			props.onBlur(true)
 		} else {
-			props.blurHandler(false)
+			props.onBlur(false)
 		}
 	}
 
@@ -67,16 +67,15 @@ const Player = (props) => {
 	}
 
 	const playlistToggleHandler = (e) => {
-
-		toggleBlur()
-
 		if (!isPlaylistOpen) {
 			togglePlaylistRef.current.classList.toggle('visible');
 			setIsPlaylistOpen(true)
+			toggleBlur(true)
 			setIsClicked(!isClicked);
 		} else {
 			togglePlaylistRef.current.classList.toggle('visible');
 			setIsPlaylistOpen(false)
+			toggleBlur(false)
 			setIsClicked(!isClicked);
 		}
 	}
@@ -137,7 +136,7 @@ const Player = (props) => {
       </div>
     <div className="audioPlayer__buttons">
 			<button  className={`button button__video ${isPlaylistOpen && currentSong.video ? 'visible-btn' : null}`}>
-				Клип
+				<a href={currentSong.video} target="_blank" rel="noreferrer">Клип</a>
 			</button>
 
       <button
