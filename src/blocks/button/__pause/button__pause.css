@@ -1,0 +1,12 @@
+.button__pause {
+  background: url('../../../images/pause.svg') no-repeat 0 9px;
+  transition: all 0.33s;
+  flex-shrink: 0;
+  left: 0px;
+  border: none;
+  position: absolute;
+}
+
+.button__pause:hover {
+  transform: scale(1.15);
+}

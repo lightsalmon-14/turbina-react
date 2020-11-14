@@ -1,0 +1,9 @@
+.button__close {
+  background: url('../../../images/close_filled.svg') no-repeat 0 9px;
+  transition: all 0.66s;
+  flex-shrink: 0;
+  transform: rotate(90deg) translate(6%, 0%);
+  border: none;
+  right: 0px;
+  position: absolute;
+}

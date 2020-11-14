@@ -1,0 +1,9 @@
+.description__item {
+  margin-bottom: 14px;
+  list-style: disc inside;
+  display: list-item;
+}
+
+.description__item:last-child {
+  margin-bottom: 0;
+}

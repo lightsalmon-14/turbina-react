@@ -1,0 +1,25 @@
+.song__title {
+  line-height: 1.2;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #fff;
+  font-size: 20px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  display: flex;
+  contain: content;
+}
+
+@media screen and (max-width: 1190px) {
+  .song__title {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .song__title {
+  font-size: 14px;
+  }
+}
+
+

@@ -1,0 +1,17 @@
+@import url('./vendor/normalize.css');
+@import url('./vendor/fonts/fonts.css');
+@import url('./blocks/root/root.css');
+@import url('./blocks/header/header.css');
+@import url('./blocks/player/player.css');
+@import url('./blocks/song/song.css');
+@import url('./blocks/animated/animated.css');
+@import url('./blocks/current/current.css');
+@import url('./blocks/playlist/playlist.css');
+@import url('./blocks/visible/visible.css');
+@import url('./blocks/visible/_blur/visible_blur.css');
+@import url('./blocks/icons/icons.css');
+@import url('./blocks/description/description.css');
+@import url('./blocks/form/form.css');
+@import url('./blocks/footer/footer.css');
+@import url('./blocks/button/button.css');
+@import url('./blocks/content/content.css');

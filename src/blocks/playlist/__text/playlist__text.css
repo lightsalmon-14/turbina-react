@@ -1,0 +1,30 @@
+.playlist__text {
+	color: #fff;
+  font-size: 20px;
+  font-family: 'Inter', Arial, sans-serif;
+  line-height: 1.35;
+  font-style: italic;
+  white-space: pre;
+  margin: 0;
+}
+
+@media screen and (max-width: 1190px) {
+  .playlist__text {
+  font-size: 18px;
+  line-height: 1.44;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .playlist__text {
+    font-size: 14px;
+    line-height: 1.36;
+    }
+}
+
+@media screen and (max-width: 812px) and (max-height: 425px) {
+  .playlist__text {
+    font-size: 14px;
+    line-height: 1.36;
+    }
+}

@@ -1,0 +1,43 @@
+.visible {
+  opacity: 1;
+  display: block;
+  transition: all 0.66s;
+  padding-right: 20px;
+  max-height: 130px;
+  height: 130px;
+  margin: 10px 35px 10px 15px;
+}
+
+@media screen and (max-width: 1190px) {
+  .visible {
+    max-height: 120px;
+  }
+}
+
+@media screen and (max-width: 975px) {
+  .visible {
+    margin: 10px 0 20px 0;
+    max-height: 110px;
+  }
+}
+
+@media screen and (max-width: 635px) {
+  .visible {
+    margin: 10px 45px 0;
+    max-height: 150px;
+  }
+}
+@media screen and (max-width: 455px) {
+  .visible {
+    margin: 30px 25px 10px;
+    max-height: 110px;
+  }
+}
+
+@media screen and (max-width: 812px) and (max-height: 425px) {
+  .visible {
+    margin: 10px 0 20px 10px;
+    max-height: 90px;
+  }
+}
+

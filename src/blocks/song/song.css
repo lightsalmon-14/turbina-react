@@ -1,0 +1,17 @@
+@import url(./__progress/song__progress.css);
+@import url(./__timer/song__timer.css);
+@import url(./__list/song__list.css);
+@import url(./__title/song__title.css);
+@import url(./__duration/song__duration.css);
+@import url(./_active/song_active.css);
+@import url(./__subtitle/song__subtitle.css);
+
+.song {
+  color: #fff;
+  min-height: 35px;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
