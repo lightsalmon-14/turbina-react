@@ -2,9 +2,10 @@
   opacity: 1;
   display: block;
   transition: all 0.66s;
+  padding-right: 20px;
   max-height: 130px;
 	height: 130px;
-  margin: 30px 35px 25px 15px;
+  margin: 10px 35px 10px 15px;
 }
 
 @media screen and (max-width: 1190px) {
@@ -15,7 +16,7 @@
 
 @media screen and (max-width: 975px) {
   .visible {
-    margin: 30px 15px 20px;
+    margin: 10px 0 20px 0;
     max-height: 110px;
   }
 }
