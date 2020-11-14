@@ -136,7 +136,7 @@ const Player = (props) => {
       </div>
     <div className="audioPlayer__buttons">
 			<button  className={`button button__video ${isPlaylistOpen && currentSong.video ? 'visible-btn' : null}`}>
-				<a href={currentSong.video} target="_blank" rel="noreferrer">Клип</a>
+				<a href={currentSong.video} target="_blank" rel="noreferrer" className="button__video_link">Клип</a>
 			</button>
 
       <button

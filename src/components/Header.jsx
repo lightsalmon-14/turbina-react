@@ -5,14 +5,13 @@ import Player from './Player';
 import Streamings from './Streamings';
 import { externalLinks as link } from '../utils/content';
 
-function Header(props) {
+function Header() {
 
 	const [ isBlur, setBlur ] = React.useState(false)
 	const blurHandler = (blur) => {
 			setBlur(blur)
 	}
 
-	console.log(props.isBlur)
   return (
     <header className="header">
       <div className={`header__menu ${isBlur ? 'visible_blur' : null }`}>

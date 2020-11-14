@@ -37,6 +37,13 @@
   font-style: italic;
 }
 
+.button__video_link:link,
+.button__video_link:visited,
+.button__video_link:active {
+  text-decoration: none;
+	color: #000;
+}
+
 @media screen and (max-width: 1190px) {
   .button__text {
     width: 125px;
