@@ -1,9 +1,9 @@
-import React, { useState, useRef, useCallback, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import playList from '../utils/songs';
 import PlayingNow from './PlayingNow';
 import Icons from './icons/index';
 
-const Player = () => {
+const Player = (props) => {
 
 	const [ textButtonState, setTextButtonState ] = useState('Текст песни');
 	const [ currentSong, setCurrentSong ] = useState(playList[0])
@@ -14,16 +14,18 @@ const Player = () => {
 	const audioRef = useRef()
 	const [ songTime, setSongTime ] = useState({ currentTime: 0, songDuration: 0 })
 
-	const nextRandomSong = (min = 0, max = playList.length) => {
-		const randomNumber = Math.floor(Math.random() * (max - min)) + min
-		setCurrentSong(playList[randomNumber]);
-		audioRef.current.play()
-	}
-
 	useEffect((min = 0, max = playList.length) => {
 		const randomNumber = Math.floor(Math.random() * (max - min)) + min
 		setCurrentSong(playList[randomNumber]);
 	}, []);
+
+	const toggleBlur = () => {
+		if (isPlaylistOpen) {
+			props.blurHandler(true)
+		} else {
+			props.blurHandler(false)
+		}
+	}
 
 	const isPlayingHandler = (e) => {
 		if (e.type === 'playing') {
@@ -65,6 +67,8 @@ const Player = () => {
 	}
 
 	const playlistToggleHandler = (e) => {
+
+		toggleBlur()
 
 		if (!isPlaylistOpen) {
 			togglePlaylistRef.current.classList.toggle('visible');
@@ -125,14 +129,14 @@ const Player = () => {
         <input
 					type="range" min="0"
 					value={ songTime.currentTime }
-					max={ '0:00' || songTime.songDuration }
+					max={ songTime.songDuration || '0:00' }
 					name="songTime"
 					className="song__duration"
 					onChange={ dragHandler }
 				/>
       </div>
     <div className="audioPlayer__buttons">
-			<button className={`button button__video ${isPlaylistOpen && currentSong.video ? 'visible-btn' : null}`}>
+			<button  className={`button button__video ${isPlaylistOpen && currentSong.video ? 'visible-btn' : null}`}>
 				Клип
 			</button>
 
@@ -156,7 +160,7 @@ const Player = () => {
 					onTimeUpdate={ songTimeUpdateHandler }
 					src={ currentSong.url }
 					ref={ audioRef }
-					onEnded={ nextRandomSong }
+					onEnded={ playTrack }
 					onPlaying={ isPlayingHandler }
 					onPause={ isPlayingHandler }
 				/>

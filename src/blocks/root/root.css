@@ -22,9 +22,3 @@
     font-size: 12px;
   }
 }
-
-* {
-  outline-style: solid;
-  outline-width: 1px;
-  outline-color: red;
-}
