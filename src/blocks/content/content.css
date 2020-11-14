@@ -3,7 +3,7 @@
   margin: 0 10px 0;
   padding: 110px 51px 110px;
   border-radius: 8px;
-	transform: translate(0px, -10px);
+  transform: translate(0px, -10px);
 }
 
 @media screen and (max-width: 1190px) {

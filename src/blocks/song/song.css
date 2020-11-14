@@ -7,9 +7,9 @@
 @import url(./__subtitle/song__subtitle.css);
 
 .song {
-  color: #fff;
+	color: #fff;
 	min-height: 35px;
-  white-space: nowrap;
+	white-space: nowrap;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;

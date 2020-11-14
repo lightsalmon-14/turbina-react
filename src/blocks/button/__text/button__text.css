@@ -8,13 +8,13 @@
   background: transparent;
   margin: 0 0 0 10px;
   display: none;
-	white-space: nowrap;
+  white-space: nowrap;
   padding: 6px 18px 6px;
   width: 135px;
 }
 
 .button__text:hover {
-	font-style: italic;
+  font-style: italic;
 }
 
 .button__video {
@@ -27,14 +27,14 @@
   background: #fff;
   margin: 0 0 0 10px;
   display: none;
-	white-space: nowrap;
+  white-space: nowrap;
   padding: 6px 18px 6px;
   height: 35px;
-	width: 94px;
+  width: 94px;
 }
 
 .button__video:hover {
-	font-style: italic;
+  font-style: italic;
 }
 
 @media screen and (max-width: 1190px) {
@@ -52,13 +52,13 @@
   .button__video {
     margin: 0;
   }
+  .button__text {
+    margin: 0 0 0 5px;
+  }
 }
 
 @media screen and (max-width: 575px) {
   .button__video {
     width: 74px;
-  }
-  .button__text {
-    margin: 0 0 0 5px;
   }
 }

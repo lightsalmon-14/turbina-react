@@ -2,7 +2,7 @@
   background: url('../../../images/close_unfilled.svg') no-repeat;
   margin-bottom: 8px;
   padding: 0;
-	flex-shrink: 0;
+  flex-shrink: 0;
   position: absolute;
   top: 13px;
   right: 13px;
