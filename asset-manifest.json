@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/turbina-react/static/css/main.8102bf6c.chunk.css",
+    "main.css": "/turbina-react/static/css/main.6b839517.chunk.css",
     "main.js": "/turbina-react/static/js/main.60e955ac.chunk.js",
     "main.js.map": "/turbina-react/static/js/main.60e955ac.chunk.js.map",
     "runtime-main.js": "/turbina-react/static/js/runtime-main.47714c05.js",
@@ -8,16 +8,16 @@
     "static/js/2.ba81a8eb.chunk.js": "/turbina-react/static/js/2.ba81a8eb.chunk.js",
     "static/js/2.ba81a8eb.chunk.js.map": "/turbina-react/static/js/2.ba81a8eb.chunk.js.map",
     "index.html": "/turbina-react/index.html",
-    "static/css/main.8102bf6c.chunk.css.map": "/turbina-react/static/css/main.8102bf6c.chunk.css.map",
+    "static/css/main.6b839517.chunk.css.map": "/turbina-react/static/css/main.6b839517.chunk.css.map",
     "static/js/2.ba81a8eb.chunk.js.LICENSE.txt": "/turbina-react/static/js/2.ba81a8eb.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/turbina-react/static/media/top_background.8c6e38ef.jpg",
+    "static/media/index.css": "/turbina-react/static/media/top_background.bf507c86.jpg",
     "static/media/logo.2155b0aa.svg": "/turbina-react/static/media/logo.2155b0aa.svg",
     "static/media/turbina_logo.10fd6bb4.svg": "/turbina-react/static/media/turbina_logo.10fd6bb4.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.47714c05.js",
     "static/js/2.ba81a8eb.chunk.js",
-    "static/css/main.8102bf6c.chunk.css",
+    "static/css/main.6b839517.chunk.css",
     "static/js/main.60e955ac.chunk.js"
   ]
 }
